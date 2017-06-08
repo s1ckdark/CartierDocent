@@ -1,0 +1,499 @@
+@charset 'UTF-8';
+@import 'fonts';
+
+@theme-color: #ea5c5a;
+@default-color: #323232;
+
+@img-url : '/innovation/CartierDocent/img';
+
+.sp-img200(@position) {    
+    background-image: url('@{img-url}/sprite.png');
+    background-position: @position;
+    background-repeat:no-repeat;
+    background-size: 200px;
+}
+.sp-img(@position) {
+    background-image: url('@{img-url}/sprite.png');
+    background-position: @position;
+    background-repeat:no-repeat;
+    background-size: 400px;
+}
+
+@mobile-small:  ~"only screen and (max-width: 340px)";
+@mobile-medium: ~"only screen and (max-width: 480px)";
+@mobile:        ~"only screen and (max-width: 768px)";
+@tablet:        ~"only screen and (max-width: 1024px)";
+@desktop:       ~"only screen and (max-width: 1120px)";
+@desktop-small: ~"only screen and (max-height: 768px)";
+@retina:        ~"only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)" ;
+
+ *   {box-sizing: border-box;}
+// Default
+body {
+    min-width: 1000px;
+    margin: auto;
+    font-size: 18px;
+    font-family: 'Roboto','NotoSansKR','맑은 고딕','Malgun Gothic','나눔고딕','NanumGothic','Noto Sans KR','Source Han Sans',sans-serif;
+    font-weight: 300;
+    color: @default-color;overflow-x:hidden;
+}
+a {
+    color: @default-color;
+    text-decoration: none;
+}
+svg, video, img {
+    vertical-align: top;
+}
+#viewport {
+    // max-width: 1600px;
+    // margin: auto;
+    padding-top: 78px;
+}
+p {
+    margin: 1em 0;
+    line-height: 1.5;
+}
+svg {
+    width: 100%; height: auto;
+}
+.brand-identity img {
+    position: relative;
+    top: -2px;
+}
+::selection {
+    background: @theme-color;
+    color: #FFF;
+}
+::-moz-selection {
+    background: @theme-color;
+    color: #FFF;
+}
+
+// Front Page
+.front_page {
+    position: absolute; z-index: 30;
+    top: 78px; right: 0; left: 0; bottom: 0;
+
+    background: @theme-color;
+    color: #fff;
+    .hero {
+        display: table;
+        width: 100%; height: 100%;
+        .inner {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%; height: 100%;
+            vertical-align: middle;
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 10px auto;
+            width: auto; 
+        }
+    }
+    .btn_front {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 7px 18px;
+        border: 2px solid rgba(255,255,255,.4);
+        border-radius: 50px;
+        background-color: transparent;
+        vertical-align: top;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 14px;
+        color: #fff;
+        transition: all .3s ease;
+        &:hover {
+            border-color: #b82eaf;
+            background-color: #b82eaf;
+        }
+    }
+}
+
+// Artist Wrap
+
+.artist_wrap {
+    position: fixed; 
+    z-index: 30;
+    top: 78px; right: 0; left: 0;
+    // height: auto;
+    background-color: #fff;
+    text-align: center;
+    overflow:hidden;
+    // width: ~"calc(100% - 360px)";
+    height:100%;
+    #artistSlider {
+        z-index:10;
+        width:100%;
+        height:100%;
+        overflow:hidden;
+    
+     .art_name_eng {
+        margin-bottom: 5px;
+        line-height: 1;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-align:center;
+    }
+
+    .art_name_kor {
+        font-weight: 400;
+        text-align:center;
+            }
+  
+    .inner {
+    position:absolute;
+    top:50px;
+    width:100%;
+    text-align:center;
+    color:white;
+     h2 {font-family:'Gotham','Malgun Gothic';font-size:14px;display:inline-block;}
+     &.dark  {color:#969696 !important; }
+    span {width:8%;display:inline-block;}
+}
+
+}
+.swiper-button-prev {
+   left: 20px;
+   .sp-img(-118px 0);
+   width:40px;
+   height: 72px;
+   margin-top:-36px;
+   display:none;
+}
+.swiper-button-next {
+   right: 20px;
+   .sp-img(-160px 0);
+   width:40px;
+   height: 72px;
+   margin-top:-36px;
+   display:none;
+   }}
+.btn_artists {
+    display: block;
+    position: absolute;
+    top: 120px; left: 40px;
+    width: 36px; height: 36px;
+    .sp-img(0 0);
+    color: transparent;
+    font-size: 0;
+    z-index:99;
+}
+
+.btn_artists.light { .sp-img(-36px 0px);}
+
+.btn_artists_desc {
+    display: inline-block;
+    position: absolute;
+    top: 120px; right:0;
+    width: 36px; height: 36px;
+    background-color:@theme-color;
+    .sp-img(-38px -44px);
+    color: transparent;
+    font-size: 0;
+    border-radius: 4px 0 0 4px;
+}
+.art_title {
+    margin-top: 20px;
+    height: 68px;
+    .art_name_eng {
+        margin-bottom: 5px;
+        line-height: 1;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        font-family: 'Gotham', sans-serif;
+        font-weight: 500;
+        color: #464646;
+        text-align:center;
+    }
+
+    .art_name_kor {
+        color: #646464;
+        font-weight: 400;
+        text-align:center;
+       
+    }
+
+    &.type1 {
+        .art_name_eng {
+            font-size: 25px;
+        }
+    }
+    &.type2 {
+        .art_name_eng {
+            font-size: 19px;
+        }
+    }
+}
+.art_menu {
+    margin-top: 5px; margin-bottom: 15px;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 5px;
+    }
+    a {
+        display: inline-block;
+        vertical-align: top;
+        width: 30px; height: 30px;
+        font-size: 0;
+        color: transparent;   
+        .sp-img(0 0);
+        backgorund-size:200px !important;
+        &.btn_play {
+
+            background-position: -20px 0;
+        }
+        &.btn_play.pause {
+            background-position: -20px -35px;
+        }
+        &.btn_txt.active {
+            background-position: -55px 0;
+        }
+        &.btn_txt {
+            background-position: -55px -35px;
+        }
+        &.btn_img.active {
+            background-position: -90px 0;
+        }
+        &.btn_img {
+            background-position: -90px -35px;
+        }
+    }
+}
+.audio_wrap {
+    position: relative;
+    margin: auto;
+    height: 25px;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    margin-top:50px;
+
+}
+.audio_player_control {
+    .play_state {
+        position: absolute;
+        top: 50%; left: 11px;
+        width: 8px; height: 10px;
+        margin-top: -5px;
+        cursor: pointer;
+
+        &.playing {
+            .sp-img200(0 -20px);
+        }
+        &.paused {
+            .sp-img200(-10px -20px);
+        }
+    }
+    .seeker {
+        position: absolute;
+        top: 5px; right: 35px; left: 55px; 
+        padding: 2px;
+        height: 16px;
+        border-radius: 16px;
+        background-color: #c8c8c8;
+        .progress_bar {
+            width: 0%; height: 12px;
+            background-color: white;
+            border-radius: 12px;
+        }
+        .progress_cover {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 2px solid #c8c8c8;
+            border-radius: 16px;
+        }
+    }
+    .start_time,
+    .end_time {
+        position: absolute;
+        top: 0;
+        line-height: 25px;
+        font-size: 11px;
+        color: #646464;
+    }
+    .start_time {
+        left: 25px;
+        text-align: left;
+    }
+    .end_time {
+        right: 5px;
+        text-align: right;
+    }
+}
+.artwork_wrap {
+    position: absolute;
+    top: 78px; right:0px;
+    height:auto;
+    padding:15px 20px;
+    background:white;
+    z-index:0;
+    .bg_artwork_wrap {z-index:-1;position:fixed;top:0;right:0;width:360px;background:white;height:100%;}
+    #artwork_desc {    padding: 15px 20px;}
+}
+
+.img_wrap {
+    position: relative;
+    max-width: 1600px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 3px;
+    display:inline;
+    img {
+        width: 100%; height: auto;
+    }
+}
+
+
+.btn_pop_close {
+    display: block;
+    position: absolute; z-index: 70;
+    width: 36px; height: 36px;
+    .sp-img(0 -110px);
+    color: transparent;
+    font-size: 0;
+    top:42px;
+    right:0;
+}
+.btn_desc_close {
+    display: block;
+    position: absolute; top:42px;left:-36px;
+    width: 36px; height: 36px;
+    background:#fff url('@{img-url}/sprite.png') no-repeat -36px -100px;
+    background-size: 400px;
+    border-radius:4px 0 0 4px;
+    color: transparent;
+    font-size: 0;
+}
+// 컨텐츠 리스트
+
+
+.artists_list {
+    // display: none;
+    position: fixed; z-index: 100;
+    top: 78px; right: 0; bottom: 0; left: 0;
+    background-image:url('@{img-url}/bg_artist_list.jpg');
+    background-position:center center;
+    background-size:cover;
+    color: #fff;
+   &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: @theme-color;
+    background-blend-mode: overlay;
+    z-index:-1;
+    opacity: .8; 
+  }
+    h3 {
+        margin: 50px auto 0;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        font-family: 'Gotham', sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        color: #fff;
+    }
+    .btn_pop_close {
+        top: 42px; right: 20px;
+    }
+
+    // Swiper
+    .swiper-container {
+        position: absolute;
+        top: 46px; right: 0; bottom: 0; left: 0;
+    }
+    .swiper-slide {
+        height: auto;
+    }
+
+    .artists_list_container {
+            width: 1120px;
+        padding: 15px 20px;
+        margin:0 auto;
+        @media only screen and (max-height: 900px) {
+            transform: scale(.7);
+        }
+
+       &:before{
+          content: " ";
+          display: table;}
+        .row {margin:0px -15px;}
+        li.data_item {
+   width: 16.66666667%;  
+            position:relative;
+            overflow:hidden;
+            margin-top:20px;
+            margin-bottom:20px;
+            float:left;
+            min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+        
+}
+ li.data_item.last {width:33.3%;}
+        img {
+            width: 100%; height: auto;
+        }
+    }
+}
+
+   
+.data_item .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background:rgba(0,0,0,0.7);
+    margin:0 15px;
+    padding:10px;
+}
+.data_item .box p {color:white;font-weight:500;font-size:16px;text-align:center;line-height:1.2;
+.title_eng {color:@theme-color;font-family: 'Gotham', '맑은 고딕','Malgun Gothic';font-size:18px;}
+}
+
+.swiper-slide {background-repeat:no-repeat;background-size:cover;background-position:center center;}
+.artist_01 {background-image:url("/innovation/CartierDocent/img/slider/artist_01_img.jpg");}
+.artist_02 {background-image:url("/innovation/CartierDocent/img/slider/artist_02_img.jpg");}
+.artist_02-1 {background-image:url("/innovation/CartierDocent/img/slider/artist_02-1_img.jpg");}
+.artist_03 {background-image:url("/innovation/CartierDocent/img/slider/artist_03_img.jpg");}
+.artist_04 {background-image:url("/innovation/CartierDocent/img/slider/artist_04_img.jpg");}
+.artist_04-1 {background-image:url("/innovation/CartierDocent/img/slider/artist_04-1_img.jpg");}
+.artist_05 {background-image:url("/innovation/CartierDocent/img/slider/artist_05_img.jpg");}
+.artist_06 {background-image:url("/innovation/CartierDocent/img/slider/artist_06_img.jpg");}
+.artist_07 {background-image:url("/innovation/CartierDocent/img/slider/artist_07_img.jpg");}
+.artist_08 {background-image:url("/innovation/CartierDocent/img/slider/artist_08_img.jpg");}
+.artist_09 {background-image:url("/innovation/CartierDocent/img/slider/artist_09_img.jpg");}
+.artist_10 {background-image:url("/innovation/CartierDocent/img/slider/artist_10_img.jpg");}
+.artist_11 {background-image:url("/innovation/CartierDocent/img/slider/artist_11_img.jpg");}
+.artist_12 {background-image:url("/innovation/CartierDocent/img/slider/artist_12_img.jpg");}
+.artist_12-1 {background-image:url("/innovation/CartierDocent/img/slider/artist_12-1_img.jpg");}
+.artist_13 {background-image:url("/innovation/CartierDocent/img/slider/artist_13_img.jpg");}
+.artist_14 {background-image:url("/innovation/CartierDocent/img/slider/artist_14_img.jpg");}
+.artist_15 {background-image:url("/innovation/CartierDocent/img/slider/artist_15_img.jpg");}
+.artist_16 {background-image:url("/innovation/CartierDocent/img/slider/artist_16_img.jpg");}
+.artist_17 {background-image:url("/innovation/CartierDocent/img/slider/artist_17_img.jpg");}
+.artist_17-1 {background-image:url("/innovation/CartierDocent/img/slider/artist_17-1_img.jpg");}
+.artist_18 {background-image:url("/innovation/CartierDocent/img/slider/artist_18_img.jpg");}
+.artist_19 {background-image:url("/innovation/CartierDocent/img/slider/artist_19_img.jpg");}
+.artist_19-1 {background-image:url("/innovation/CartierDocent/img/slider/artist_19-1_img.jpg");}
+.artist_20 {background-image:url("/innovation/CartierDocent/img/slider/artist_20_img.jpg");}
+.artist_21 {background-image:url("/innovation/CartierDocent/img/slider/artist_21_img.jpg");}
+.artist_22 {background-image:url("/innovation/CartierDocent/img/slider/artist_22_img.jpg");}
+.artist_23 {background-image:url("/innovation/CartierDocent/img/slider/artist_23_img.jpg");}
+
+.dp {display:block !important;}

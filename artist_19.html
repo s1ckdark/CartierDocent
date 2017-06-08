@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <title>PARKing CHANce 파킹찬스 - 까르띠에 현대미술재단X서울시립미술관</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://ilab.joins.com/common/img/favicon.ico">
+    
+    <meta name="viewport" content="width=1200, initial-scale=1, minimum-scale=1, maximum-scale=3, user-scalable=yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Innovation Lab">
+    <meta name="keyword" content="하이라이트, highlights , 까르띠에, 까르띠에 현대미술재단, 프랑스, 파리, 서울, 서울시립미술관, SEMA, 에르베 샹데스, 현대미술, 전시회, 장 미셸 알베롤라, 클라우디아 안두자르, 차이 구어치앙, 마크 쿠튀리에, 레이몽 드파르동, 클로딘 누가레, 딜러 스코피디오 렌프로, 훌리아 이시드레스, 키타노 타케시, 버니 크라우스 , 유브이에이, 이불, 데이비드 린치, 알레산드로 멘디니, 뫼비우스, 모리야마 다이도 , 론 뮤익, 장 미셸 오토니엘, 파킹찬스, 박찬욱, 박찬경, 후안나 마르타 로다스, 쉐리 삼바, 패티 스미스, 선우훈, 사라 지, 요코오 타다노리">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PARKing CHANce 파킹찬스" />
+    <meta name="twitter:image:src" content="/innovation/CartierDocent/mobile/img/artist_19_img.jpg">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="PARKing CHANce 파킹찬스">
+    
+    <meta property="og:image" content="/innovation/CartierDocent/mobile/img/artist_19_img.jpg">
+    <meta property="og:site_name" content="PARKing CHANce 파킹찬스">
+    <meta property="og:locale" content="ko">
+    <meta property="article:author" content="http://ilab.joins.com/innovation/CartierDocent/">
+    <meta property="article:publisher" content="http://ilab.joins.com/innovation/CartierDocent/">
+
+    <script type="text/javascript">
+        if( navigator.userAgent.toUpperCase().indexOf("MOBI") > 0) {
+            location.replace("/innovation/CartierDocent/mobile/artist_19.html");
+        }
+    </script>
+
+    <!-- Content Style -->
+    <link rel="stylesheet" href="/common/css/common.css">
+    <link rel="stylesheet" href="/innovation/CartierDocent/css/swiper.min.css">
+    <link rel="stylesheet" href="/innovation/CartierDocent/css/style.css?v=">
+    <!-- // Content Style -->
+    
+    <!-- Common JS -->
+    <script src="/common/js/jquery-1.11.3.min.js"></script>
+    <script src="/common/js/transparency.js"></script>
+    <script src="/common/js/jquery.utils.js"></script>
+    <script src="/common/js/utils.js"></script>
+    <script src="/common/js/layout.js"></script>
+    <script src="/common/js/kakao.min.js"></script>
+    <!-- // Common JS -->
+    
+    <!-- Custom JS -->
+    <script src="/innovation/CartierDocent/js/idangerous.swiper.min.js"></script>
+    <script src="/innovation/CartierDocent/js/TweenMax.min.js"></script>
+    <script src="/innovation/CartierDocent/js/jquery.lazyload.min.js?v=201703021"></script>
+    <script src="/innovation/CartierDocent/js/functions.js?v=201703021"></script>
+
+    <!-- // Custom JS -->
+
+    <!-- Default(SNS, Analytics) JS -->
+    <script>
+        //Begin Set Vod OneTime URL
+        $.fn.fnSetVideo = function(setVideo) {
+            var $Video = $(this);
+            
+            $.ajax({
+                type: "get",
+                url: "/common/lib/GetOvpVod.aspx?mediakey=" + setVideo.ovpUrl + "&ro=" + setVideo.ovpRo,
+                contentType: "text/html; charset=utf-8",
+                dataType: "text",
+                success: function (data, status) {
+                    if (status == "success") {
+                        $Video.attr({
+                            'src': data, 
+                            'poster': setVideo.poster,
+                            'preload': setVideo.preload,
+                            'autoplay': (setVideo.auto || false),
+                            'controls': (setVideo.ctrls || false),
+                            'loop': (setVideo.loop || false),
+                            'volume': (setVideo.volume || 0)
+                        });
+                    }
+                },
+                error: function () {}
+            });
+        }
+        //End Set Vod OneTime URL
+        
+        //SNS 공유
+        Kakao.init('0ea6b97767c7ca7b384389c25beb691f');
+        
+        //공유 PC
+        function fnSendSns(sns, url, txt) {
+            var o;
+            var _url = encodeURIComponent(url || $("meta[property='og:url']").attr("content")); //공유 URL
+            var _txt = encodeURIComponent(txt || $("title").text());                            //공유 제목
+            var _br  = encodeURIComponent('\r\n');
+            var _img = encodeURIComponent($("meta[property='og:image']").attr("content"));      //공유 이미지
+    
+            switch(sns) {
+                case 'facebook':
+                    o = { type:sns, method:'popup', url:'http://www.facebook.com/sharer/sharer.php?u=' + _url, width:555, height:608, resize:'no' };
+                    break;
+                case 'twitter':
+                    o = { type:sns, method:'popup', url:'http://twitter.com/intent/tweet?text=' + _txt + '&url=' + _url, width:555, height:500, resize:'no' };
+                    break;
+                case 'kakaostory':
+                    o = {};
+                    Kakao.Story.share({ url: $("meta[property='og:url']").attr("content"), text: $("title").text() });
+                    break;
+                case 'band':
+                    o = { type:sns, method:'popup', url:'http://band.us/plugin/share?body=' + _txt + '&route=' + _url, width:410, height:540, resize:'no' };
+                    break;
+                case 'naverblog':
+                    o = { type:sns, method:'popup', url:'http://share.naver.com/web/shareView.nhn?url=' + _url + '&title=' + _txt, width:557, height:558, resize:'no' };
+                    break;
+                case 'googleplus':
+                    o = { type:sns, method:'popup', url:'https://plus.google.com/share?url=' + _url + '&hl=ko', width:490, height:490, resize:'no'};
+                    break;
+                case 'pinterest':
+                    o = { type:sns, method:'popup', url:'https://www.pinterest.com/pin/create/button/?url=' + _url + '&media=' + _img + '&description=' + _txt, width:750, height:650, resize:'no'};
+                    break;
+                default:
+                    alert('지원하지 않는 SNS입니다.');
+                    return false;
+            }
+         
+            if (o.method == "popup") {
+                window.open(o.url, o.type + "_sns", "width=" + o.width + ",height=" + o.height + ",resizable=" + o.resize);
+            }
+        }
+    </script>
+    
+    <!-- Begin GA -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+         
+          ga('create', 'UA-40895666-12', 'auto');
+          ga('send', 'pageview');
+     
+    </script>
+    <!-- End GA -->
+    
+    <!-- Begin Chartbeat -->
+    <script type="text/javascript">
+        var _sf_async_config={};
+        /** CONFIGURATION START **/
+        _sf_async_config.uid = 62500;
+        _sf_async_config.domain = 'ilab.joins.com';
+        _sf_async_config.useCanonical = true;
+        _sf_async_config.sections = 'CartierDocent PC';  // 여기 내용은 페이지에 맞게 변경해주세요
+        _sf_async_config.authors = 'Innovation Lab';    // 여기 내용은 페이지에 맞게 변경해주세요
+        /** CONFIGURATION END **/
+        (function(){
+          function loadChartbeat() {
+            window._sf_endpt=(new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+            document.body.appendChild(e);
+          }
+          var oldonload = window.onload;
+          window.onload = (typeof window.onload != 'function') ?
+             loadChartbeat : function() { oldonload(); loadChartbeat(); };
+        })();
+    </script>
+    <!-- End Chartbeat -->
+
+    <!-- Dable 스크립트 시작 / 문의 support@dable.io -->
+    <script>
+    (function(d,a,b,l,e,_) {
+    d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+    e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/dablena.min.js';
+    _=a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e,_);
+    })(window,document,'dablena','script');
+    dablena('init', 'www.fondationcartier.com');
+    dablena('track', 'PageView');
+    </script>
+    <!-- Dable 스크립트 종료 / 문의 support@dable.io -->
+
+        <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '174966746210568'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=174966746210568&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+    <!-- // Default(SNS, Analytics) JS -->
+</head>
+<body>
+
+<div id="viewport" class="">
+    <!-- 상단공통 -->
+    <div id="roof" class="rooftop on">
+        <script type="text/javascript">
+            layout.gnb.renderHtml();
+            $(function() {
+                $(".rooftop").addClass("on");
+            });
+        </script>
+        <div class="forehead">
+            <div class="inner">
+                <div class="brandsolution-logo"><a href="/" title="Innovation Lab"></a></div>
+                <div class="brand-identity"><a href="/innovation/CartierDocent/"><img src="/innovation/Cartier/img/logo_foundation_cartier.png" alt="까르띠에" width="148" height="32"></a></div>
+                <div class="sns-share-box">
+                    <ul>
+                        <li><a href="http://ilab.joins.com/innovation/Cartier/" onclick="fnSendSns(&#39;facebook&#39;);" class="sns-fb" title="페이스북"></a></li>
+                        <li><a href="http://ilab.joins.com/innovation/Cartier/" onclick="fnSendSns(&#39;twitter&#39;);" class="sns-tw" title="트위터"></a></li>
+                        <li><a href="http://ilab.joins.com/innovation/Cartier/" onclick="fnSendSns(&#39;kakaostory&#39;);" class="sns-ks" title="카카오스토리"></a></li>
+                        <li><a href="http://ilab.joins.com/innovation/Cartier/" class="sns-more" title="더 보기"></a></li>
+                    </ul>
+                    <div id="snsMore" class="sns-more-box">
+                        <ul>
+                            <li><a href="http://ilab.joins.com/innovation/Cartier/" onclick="fnSendSns(&#39;googleplus&#39;);" class="sns-gp" title="구글+"><i></i>구글+</a></li>
+                            <li><a href="http://ilab.joins.com/innovation/Cartier/" onclick="fnSendSns(&#39;pinterest&#39;);" class="sns-pt" title="핀터레스트"><i></i>핀터레스트</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //상단공통 -->
+
+    <!-- 콘텐츠 -->
+    <main id="container" class="content_wrap">
+        <a href="#" class="btn_artists light">작가 더 보기</a>
+        <a href="#" class="btn_artists_desc">설명 보기</a>
+        <!-- 오디오 영역 -->
+        <section class="artist_wrap">
+            <div id="artistSlider" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide  artist_19">
+                        <article class="inner">
+                            <h2 class="art_name_kor">‹격세지감›, 2017</h2><span></span><h2 class="art_name_eng">Decades Apart, 2017</h2>                 
+                        </article>
+                    </div>
+                  <div class="swiper-slide  artist_19-1">
+                        <article class="inner">
+                            <h2 class="art_name_kor">‹격세지감›, 2017</h2><span></span><h2 class="art_name_eng">Decades Apart, 2017</h2>                 
+                        </article>
+                    </div>
+                </div>
+                <div class="swiper-button-prev dp"></div>
+                <div class="swiper-button-next dp"></div>
+            </div>
+           
+            
+           
+        </section>
+        <!-- // 오디오 영역 -->
+        <section class="artwork_wrap">
+                <div class="bg_artwork_wrap"></div>
+        <a href="#" id="closeBtn" class="btn_desc_close">설명 닫기</a>
+            <div id="artwork_desc">
+                <article class="inner">
+          <header class="art_title type2">
+                <h1 class="art_name_eng">PARKing <br>CHANce</h1>
+                <h2 class="art_name_kor">파킹찬스</h2>
+            </header>
+                   <div class="audio_wrap">
+                <div class="audio_file" id="playerContainer" href="javascript:;">
+                    <audio id="player" ontimeupdate="initProgressBar();">
+                        <source src="/innovation/CartierDocent/audio/artist_19_audio.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+                <div class="audio_player_control">
+                    <div id="playBtn" class="play_state playing"></div>
+                        <div id="seekObj" class="seeker">
+                            <div class="progress_bar"></div>
+                            <div class="progress_cover"></div>
+                        </div>
+                    <div class="start_time">0:00</div>
+                    <div class="end_time">1:37</div>
+                </div>
+            </div>
+                    <div class="txt_wrap">
+                        <p>
+                          세계적인 영화감독 박찬욱과 미디어 아티스트 박찬경 형제가 만든 팀 '파킹찬스'는 말 그대로 ‘주차 기회’란 뜻입니다. 형제의 성 ‘박’(Park)과 돌림자 ‘찬’(Chan)을 합쳐 만든 이름이기도 합니다. 각자 평소에 하는 작품과는 다른 특별한 협업의 기회를 찾아 작업하는 것으로 알려져 있는데 팀으로서 형제의 관심은 주로 실험적인 중·단편영화, 다큐멘터리, 뮤직비디오 등입니다. 파킹찬스가 이번 ‹하이라이트› 전시를 위해 작업한 ‹격세지감›은 ‘몰입형 3D 사운드–이미지’ 영상설치입니다. ‹격세지감›은 박찬욱 감독의 영화 ‹공동경비구역 JSA›(2000)의 오픈 세트를 3D 영상으로 촬영하고, 소리를 입체적으로 다루어 관객을 둘러싼듯한 특별한 경험을 제공합니다. 파킹찬스는"영화 ‹공동경비구역 JSA›가 상영되었을 당시의 희망적이었던 남북간 화해 분위기와 반대로 지금의 남북 관계는 17년 이전의 냉전상황 그대로다"면서 "마치 이러한 상황을 비유하듯이 영화 제작 당시에 만들어졌던 판문점 세트는 황폐하게 변해버렸고 곧 철거될 예정"이라고 했습니다. 그들은 또 "세트를 찍은 입체영상과 오리지널 사운드 트랙은 당시 남아있는 기억과 낙관주의의 허상을 보여주고 있다"고 설명했습니다.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+              <!-- 아티스트 리스트 -->
+         <div class="artists_list pop_wrap">
+            <h3>Seoul Museum of Art</h3>
+            <a href="#" class="btn_pop_close">창 닫기</a>
+<div class="artists_list_container">
+                <ul class="row">
+                           <li class="data_item" data-artist="01">
+                                <a href="artist_01.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Chéri Samba</span><br>쉐리 삼바
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_01.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="02">
+                                <a href="artist_02.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Diller Scofidio<br>+ Renfro</span><br>딜러 스코피디오 렌프로
+                                         </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_02.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="03">
+                                <a href="artist_03.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Raymond<br>Depardon<br>/ Claudine<br>Nougaret</span><br>레이몽 드파르동<br>/ 클로딘 누가레
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_03.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="04">
+                                <a href="artist_04.html">            
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">LEEBUL</span><br>이불
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_04.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="05">
+                                <a href="artist_05.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Cai<br>Guo-Qiang</span><br>차이 구어치앙
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_05.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="06">
+                                <a href="artist_06.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Moriyama<br>Daido</span><br>모리야마 다이도
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_06.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="07">
+                                <a href="artist_07.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Marc Couturier</span><br>마크 쿠튀리에
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_07.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="08">
+                                <a href="artist_08.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Jean-Michel<br>Othoniel</span><br>장 미셸 오토니엘
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_08.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="09">
+                                <a href="artist_09.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Ron Mueck</span><br>론 뮤익
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_09.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="10">
+                                <a href="artist_10.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Moebius</span><br>뫼비우스
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_10.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="11">
+                                <a href="artist_11.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Sarah Sze</span><br>사라 지
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_11.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="12">
+                                <a href="artist_12.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Bernie<br>Krause<br>/ United Visua<br>Artists</span><br>버니 크라우스<br>/ 유브이에이
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_12.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="13">
+                                <a href="artist_13.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Claudia<br>Andujar</span><br>
+                                            클라우디아<br>안두자르
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_13.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="14">
+                                <a href="artist_14.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Juana<br>Marta Rodas<br>/ Julia Isidrez</span> <br>후안나<br>마르타 로다스<br>/ 훌리아 이시드레스
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_14.jpg" alt="" width="158" height="158">
+                                </a>
+                                </li>
+                            <li class="data_item" data-artist="15">
+                                <a href="artist_15.html">
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Alessandro<br>Mendini</span><br>알레산드로 멘디니
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_15.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="16">
+                                <a href="artist_16.html">            
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Takeshi Kitano</span><br>키타노 타케시
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_16.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="17">
+                                <a href="artist_17.html">           
+                                    <div class="box over">
+                                        <p>
+                                           <span class="title_eng">David Lynch</span><br>데이비드 린치
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_17.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="18">
+                                <a href="artist_18.html">            
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Patti Smith</span><br>패티 스미스
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_18.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="19">
+                                <a href="artist_19.html">           
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">PARKing CHANce</span> <br>
+                                            파킹찬스
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_19.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="20">
+                                <a href="artist_20.html">            
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Jean-Miche<br>Alberolai</span><br>장 미셸 알베롤라
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_20.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="21">
+                                <a href="artist_21.html">            
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Sunwoo<br>Hoon</span><br>선우훈
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_21.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item" data-artist="22">
+                                <a href="artist_22.html">           
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Yokoo<br>Tadanori</span><br>요코오 타다노리
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_22.jpg" alt="" width="158" height="158">
+                                </a>
+                            </li>
+                            <li class="data_item last" data-artist="23">
+                                <a href="artist_23.html">           
+                                    <div class="box over">
+                                        <p>
+                                            <span class="title_eng">Jean Nouvel</span><br>장 누벨
+                                        </p>
+                                    </div>
+                                    <img src="/innovation/CartierDocent/img/thumb/cartier_list_23.jpg" alt="" width="340" height="158">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+        </div>
+        <!-- // 아티스트 리스트 -->
+
+
+    </main>
+    <!-- // 콘텐츠 -->
+
+</div>
+</body>
+</html>

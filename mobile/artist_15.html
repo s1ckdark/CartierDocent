@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Alessandro Mendini 알레산드로 멘디니 - 까르띠에 현대미술재단X서울시립미술관</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://ilab.joins.com/common/img/favicon.ico">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Innovation Lab">
+    <meta name="keyword" content="하이라이트, highlights , 까르띠에, 까르띠에 현대미술재단, 프랑스, 파리, 서울, 서울시립미술관, SEMA, 에르베 샹데스, 현대미술, 전시회, 장 미셸 알베롤라, 클라우디아 안두자르, 차이 구어치앙, 마크 쿠튀리에, 레이몽 드파르동, 클로딘 누가레, 딜러 스코피디오 렌프로, 훌리아 이시드레스, 키타노 타케시, 버니 크라우스 , 유브이에이, 이불, 데이비드 린치, 알레산드로 멘디니, 뫼비우스, 모리야마 다이도 , 론 뮤익, 장 미셸 오토니엘, 파킹찬스, 박찬욱, 박찬경, 후안나 마르타 로다스, 쉐리 삼바, 패티 스미스, 선우훈, 사라 지, 요코오 타다노리">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alessandro Mendini 알레산드로 멘디니" />
+    <meta name="twitter:image:src" content="/innovation/CartierDocent/mobile/img/artist_15_img.jpg">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Alessandro Mendini 알레산드로 멘디니">
+    
+    <meta property="og:image" content="/innovation/CartierDocent/mobile/img/artist_15_img.jpg">
+    <meta property="og:site_name" content="Alessandro Mendini 알레산드로 멘디니">
+    <meta property="og:locale" content="ko">
+    <meta property="article:author" content="http://ilab.joins.com/innovation/CartierDocent/">
+    <meta property="article:publisher" content="http://ilab.joins.com/innovation/CartierDocent/">
+
+    <script type="text/javascript">
+        if( navigator.userAgent.toUpperCase().indexOf("MOBI") < 0) {
+            location.replace("/innovation/CartierDocent/artist_15.html");
+        }
+    </script>
+
+    <!-- Content Style -->
+    <link rel="stylesheet" href="/common/css/common_m.css">
+    <link rel="stylesheet" href="/innovation/CartierDocent/css/swiper.min.css">
+    <link rel="stylesheet" href="/innovation/CartierDocent/mobile/css/style.css?v=">
+    <!-- // Content Style -->
+    
+    <!-- Common JS -->
+    <script src="/common/js/jquery-1.11.3.min.js"></script>
+    <script src="/common/js/transparency.js"></script>
+    <script src="/common/js/jquery.utils.js"></script>
+    <script src="/common/js/utils.js"></script>
+    <script src="/common/js/layout.js"></script>
+    <script src="/common/js/kakao.min.js"></script>
+    <!-- // Common JS -->
+    
+    <!-- Custom JS -->
+    <script src="/innovation/CartierDocent/js/swiper.jquery.min.js"></script>
+    <script src="/innovation/CartierDocent/js/TweenMax.min.js"></script>
+    <script src="/innovation/CartierDocent/mobile/js/functions.js?v=201705291"></script>
+
+    <!-- // Custom JS -->
+
+    <!-- Default(SNS, Analytics) JS -->
+    <script>
+        
+        //Begin Set Vod OneTime URL
+        $.fn.fnSetVideo = function(setVideo) {
+            var $Video = $(this);
+            
+            $.ajax({
+                type: "get",
+                url: "/common/lib/GetOvpVod.aspx?mediakey=" + setVideo.ovpUrl + "&ro=" + setVideo.ovpRo,
+                contentType: "text/html; charset=utf-8",
+                dataType: "text",
+                success: function (data, status) {
+                    if (status == "success") {
+                        $Video.attr({
+                            'src': data, 
+                            'poster': setVideo.poster,
+                            'preload': setVideo.preload,
+                            'autoplay': (setVideo.auto || false),
+                            'controls': (setVideo.ctrls || false),
+                            'loop': (setVideo.loop || false),
+                            'volume': (setVideo.volume || 0)
+                        });
+                    }
+                },
+                error: function () {}
+            });
+        }
+        //End Set Vod OneTime URL
+        
+        //SNS 공유
+        Kakao.init('0ea6b97767c7ca7b384389c25beb691f');
+        
+        //공유 Mobile
+        function fnSendSns(sns, url, txt) {
+            var o;
+            var _url = encodeURIComponent(url || $("meta[property='og:url']").attr("content")); //공유 URL
+            var _txt = encodeURIComponent(txt || $("title").text());                            //공유 제목
+            var _br  = encodeURIComponent('\r\n');
+            var _img = encodeURIComponent($("meta[property='og:image']").attr("content"));      //공유 이미지
+            switch(sns)
+            {
+                case 'facebook':
+                    o = { type:sns, method:'popup', url:'http://www.facebook.com/sharer/sharer.php?u=' + _url, width:555, height:608, resize:'no' };
+                    break;
+                case 'twitter':
+                    o = { type:sns, method:'popup', url:'http://twitter.com/intent/tweet?text=' + _txt + '&url=' + _url, width:555, height:500, resize:'no' };
+                    break;
+                case 'kakaotalk':
+                    o = {};
+                    Kakao.Link && Kakao.Link.sendTalkLink({
+                        label: (txt || $("title").text()),
+                        webLink: {
+                            text: $("meta[name='description']").attr("content"),
+                            url: location.href
+                        },
+                        image: {
+                            src: $("meta[property='og:image']").attr("content"),
+                            width: 1280,
+                            height: 670
+                        },
+                        fail: function () {
+                            alert('지원하지 않는 플랫폼입니다.');
+                        }
+                    });
+                    break;
+                case 'kakaostory':
+                    o = {};
+                    Kakao.Story.share({ url: $("meta[property='og:url']").attr("content"), text: $("title").text() });
+                    break;
+                case 'band':
+                    o = { type:sns, method:'web2app', param:'create/post?text=' + _txt + _br + _url, a_store:'itms-apps://itunes.apple.com/app/id542613198?mt=8', g_store:'market://details?id=com.nhn.android.band', a_proto:'bandapp://', g_proto:'scheme=bandapp;package=com.nhn.android.band' };
+                    break;
+                case 'naverblog':
+                    o = { type:sns, method:'popup', url:'http://share.naver.com/web/shareView.nhn?url=' + _url + '&title=' + _txt, width:557, height:558, resize:'no' };
+                    break;
+                case 'googleplus':
+                    o = { type:sns, method:'popup', url:'https://plus.google.com/share?url=' + _url, width:490, height:490, resize:'no'};
+                    break;
+                default:
+                    alert('지원하지 않는 SNS입니다.');
+                    return false;
+            }
+            switch(o.method)
+            {
+                case 'popup':
+                    window.open(o.url, o.type + "_sns", "width=" + o.width + ",height=" + o.height + ",resizable=" + o.resize);
+                    break;
+                case 'web2app':
+                    if(navigator.userAgent.match(/android/i))
+                    {
+                        setTimeout(function(){ location.href = 'intent://' + o.param + '#Intent;' + o.g_proto + ';end'}, 100);
+                    }
+                    else if(navigator.userAgent.match(/(iphone)|(ipod)|(ipad)/i))
+                    {
+                        setTimeout(function(){ location.href = o.a_store; }, 200);          
+                        setTimeout(function(){ location.href = o.a_proto + o.param }, 100);
+                    }
+                    else
+                    {
+                        alert('이 기능은 모바일에서만 사용할 수 있습니다.');
+                    }
+                    break;
+            }
+        }
+    </script>
+    <!-- Begin GA -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+         
+          ga('create', 'UA-40895666-12', 'auto');
+          ga('send', 'pageview');
+     
+    </script>
+    <!-- End GA -->
+    
+    <!-- Begin Chartbeat -->
+    <script type="text/javascript">
+        var _sf_async_config={};
+        /** CONFIGURATION START **/
+        _sf_async_config.uid = 62500;
+        _sf_async_config.domain = 'ilab.joins.com';
+        _sf_async_config.useCanonical = true;
+        _sf_async_config.sections = 'CartierDocent Mobile';  // 여기 내용은 페이지에 맞게 변경해주세요
+        _sf_async_config.authors = 'Innovation Lab';    // 여기 내용은 페이지에 맞게 변경해주세요
+        /** CONFIGURATION END **/
+        (function(){
+          function loadChartbeat() {
+            window._sf_endpt=(new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+            document.body.appendChild(e);
+          }
+          var oldonload = window.onload;
+          window.onload = (typeof window.onload != 'function') ?
+             loadChartbeat : function() { oldonload(); loadChartbeat(); };
+        })();
+    </script>
+    <!-- End Chartbeat -->
+
+    <!-- Dable 스크립트 시작 / 문의 support@dable.io -->
+    <script>
+    (function(d,a,b,l,e,_) {
+    d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+    e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/dablena.min.js';
+    _=a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e,_);
+    })(window,document,'dablena','script');
+    dablena('init', 'www.fondationcartier.com');
+    dablena('track', 'PageView');
+    </script>
+    <!-- Dable 스크립트 종료 / 문의 support@dable.io -->
+
+        <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '174966746210568'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=174966746210568&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+    <!-- // Default(SNS, Analytics) JS -->
+</head>
+<body>
+
+<div id="viewport" class="">
+    <!-- 상단공통 -->
+    <div id="roof" class="rooftop on">
+        <div class="forehead">
+            <div class="brandsolution-logo"><a href="/" title="Innovation Lab"></a></div>
+            <div class="brand-identity"><a href="index.html"><img src="/innovation/CartierDocent/img/logo_foundation_cartier.png" alt="까르띠에" height="23"></a></div>
+            <div class="sns-share-box">
+                <a href="#snsMore" class="btn-sns-more">SNS공유</a>
+            </div>
+        </div>
+        <!-- SNS공유모달 -->
+        <div id="snsMore" class="sns-modal">
+            <div class="cover"></div>
+            <div class="sns-modal-inner">
+                <div class="modal-head">
+                    공유하기<button type="button" class="close-modal">닫기</button>
+                </div>
+                <ul class="sns-list">
+                    <li><a onclick="fnSendSns('facebook');" class="sns-fb"><i></i><span>페이스북</span></a></li>
+                    <li><a onclick="fnSendSns('twitter');" class="sns-tw"><i></i><span>트위터</span></a></li>
+                    <!-- li><a onclick="fnSendSns('googleplus');" class="sns-gp"><i></i><span>구글+</span></a></li -->
+                    <!-- li><a onclick="#none" class="sns-pi"><i></i><span>핀터레스트</span></a></li -->
+                    <!-- <li><a onclick="fnSendSns('kakaotalk');" class="sns-kt"><i></i><span>카카오톡</span></a></li>-->
+                    <!-- li><a onclick="#none" class="sns-it"><i></i><span>인스타그램</span></a></li -->
+                    <li><a onclick="fnSendSns('kakaostory');" class="sns-ks"><i></i><span>카카오스토리</span></a></li>
+                    <!-- li><a onclick="#none" class="sns-pk"><i></i><span>포켓</span></a></li -->
+                    <!-- li><a onclick="#none" class="sns-ml"><i></i><span>메일</span></a></li -->
+                </ul>
+            </div>
+        </div>
+        <!-- //SNS공유모달 -->
+    </div>
+    <!-- //상단공통 -->
+
+    <!-- 콘텐츠 -->
+    <style>
+       
+    </style>
+    <main id="container" class="content_wrap">
+
+        <!-- 오디오 영역 -->
+        <section class="artist_wrap">
+            <a href="#" class="btn_artists"><span>LIST</span></a>
+            <header class="art_title type2">
+                <h1 class="art_name_eng">Alessandro <br>Mendini</h1>
+                <h2 class="art_name_kor">알레산드로 멘디니</h2>
+            </header>
+            <nav class="art_menu">
+                <ul>
+                    <li><a href="#" id="playBtn" class="btn_play">오디오 재생</a></li>
+                    <li><a href="#artwork" id="showImg" class="btn_img active">사진 보기</a></li>
+                    <li><a href="#description" id="showTxt" class="btn_txt">설명 보기</a></li>
+                </ul>
+            </nav>
+            <div class="audio_wrap">
+                <div class="audio_file" id="playerContainer" href="javascript:;">
+                    <audio id="player" ontimeupdate="initProgressBar();">
+                        <source src="/innovation/CartierDocent/audio/artist_15_audio.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+                <div class="audio_player_control">
+                    <div class="play_state paused"></div>
+                        <div id="seekObj" class="seeker">
+                            <div class="progress_bar"></div>
+                            <div class="progress_cover"></div>
+                        </div>
+                    <div class="start_time">0:00</div>
+                    <div class="end_time">1:17</div>
+                </div>
+            </div>
+        </section>
+        <!-- // 오디오 영역 -->
+        
+        <!-- 작품 설명 -->
+        <section class="botttom_wrap">
+            <div id="bottomSlider" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article class="inner">
+                            <div class="img_wrap light">
+                                <img src="/innovation/CartierDocent/mobile/img/artist_15_img.jpg" alt="">
+                                <a href="#" class="btn_full"><i></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="verticalSlider" class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <article class="inner">
+                                        <div class="txt_wrap">
+                                            <p>
+                                                알레산드로 멘디니는 까르띠에 현대미술재단과 2002년 ‹부서지기 쉬운› 전시부터 오랜 인연을 맺어온 중요한 작가입니다. 까르띠에 현대미술재단은 ‹뒤러의 기사›와 같은 멘디니의 기념비적 작품들을 다수 소장하고 있으며 해당 작품들은 2016년 동대문디자인플라자에서 열린 멘디니 개인전에서 소개되기도 했습니다. 멘디니는 자신의 도자 작품 ‹얼굴 모양의 병›에 대해 "인간은 수 천 년 동안 형상을 모방해왔다. 보석에서 건축처럼    세련된 작업부터 대중문화까지 인간은 언제나 자신들이 만드는 사물에 그 모습을 담아왔다"라고 말했습니다. 그러면서 그는 "내가 만드는 이미지에 나를 모델로 활용함으로써 나는 나 자신의 친구로 만든다"라며 "인간의 얼굴을 닮은 이 병들은 고대 초기 그리스의 매력을 담고있으며 이런 사례는 어느 문명에서나 찾아볼 수 있다"라고 덧붙였습니다. 
+                                            </p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- / 작품 설명 -->
+
+        <!-- 작품 갤러리 -->
+        <div class="art_gallery pop_wrap">
+            <a href="#" class="btn_pop_close">창 닫기</a>
+            <div id="artSlider" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="art_img portrait">
+                            <img src="/innovation/CartierDocent/mobile/img/artist_15_big.jpg" alt="">
+                        </div>
+                        <div class="art_desc">
+                            <p>
+                                ‹얼굴 모양의 병›, 2002
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <!-- // 작품 갤러리 -->
+
+        <!-- 아티스트 리스트 -->
+        <div class="artists_list pop_wrap">
+            <h3>Seoul Museum of Art 1F</h3>
+            <a href="#" class="btn_pop_close">창 닫기</a>
+            <div id="artistSlider" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <ul class="artists">
+                            <li><a href="artist_01.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_01.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_02.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_02.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_03.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_03.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_04.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_04.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_05.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_05.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_06.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_06.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_07.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_07.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_08.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_08.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_09.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_09.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_10.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_10.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_11.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_11.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_12.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_12.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_13.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_13.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_14.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_14.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_15.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_15.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_16.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_16.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_17.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_17.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_18.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_18.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_19.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_19.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_20.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_20.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_21.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_21.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_22.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_22.jpg" alt="" width="560" height="200"></a></li>
+                            <li><a href="artist_23.html"><img src="/innovation/CartierDocent/mobile/img/m_cartier_list_23.jpg" alt="" width="560" height="200"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        <!-- // 아티스트 리스트 -->
+
+
+    </main>
+    <!-- // 콘텐츠 -->
+
+</div>
+</body>
+</html>
